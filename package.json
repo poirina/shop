@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@firebase/auth": "^0.21.0",
+    "@react-three/fiber": "^8.9.1",
+    "@stripe/react-stripe-js": "^1.16.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,9 +13,22 @@
     "@types/node": "^16.18.7",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "api-endpoint": "^1.0.11",
+    "axios": "^1.2.1",
+    "bootstrap": "^5.1.0",
+    "react": "^18.0.0-rc.0",
+    "react-bootstrap": "^2.5.0-beta.1",
+    "react-dom": ">=16.8.0",
+    "react-icon": "^1.0.0",
+    "react-icons": "^4.7.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.2",
+    "sass-map": "^0.3.4",
+    "styled-components": "^5.3.6",
+    "three": "^0.147.0",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
   },
@@ -24,6 +40,7 @@
   },
   "eslintConfig": {
     "extends": [
+      "plugin:react/recommended",
       "react-app",
       "react-app/jest"
     ]
@@ -39,5 +56,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.0.0-rc.18",
+    "eslint-plugin-react": "^7.31.11"
+  },
+  "peerDependencies": {
+    "react-dom": ">=16.8.0"
   }
 }

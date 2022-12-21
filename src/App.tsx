@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+//@ts-ignore
+import { BrowserRouter as Router,Routes, Route} from 'react-router-dom'
+//@ts-ignore
+import { Navbar,  Footer } from './components/index'
+import {
+  HomePage,
+  ErrorPage,
+  CartPage,
+  SuccessfulPayment,
+  ShippingPage,
+  ProductsPage,
+  SingleProductPage
+} from './pages'
 
 function App() {
+  type Props = {
+    children?: React.ReactNode
+  };
+ const Layout: React.FC<Props> = ({children}) =>{
+    return (
+      <>
+        <Navbar />
+        {children}
+        <Footer />
+      </>
+    )
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Layout>
+        <Routes>
+          <Route  path='/' element={<HomePage />} />
+          <Route  path='/ShippingPage' element={<ShippingPage />}/>
+          <Route  path='/CartPage' element={ <CartPage />} />
+          <Route  path='/ProductsPage' element={<ProductsPage />} />
+          <Route  path='/Products/:slug' element={<SingleProductPage />}/>
+          <Route  path='/Successful_payment' element={<SuccessfulPayment />}/>
+          <Route path='*' element={<ErrorPage />}/>
+        </Routes>
+      </Layout>
+    </Router>
+  )
 }
 
-export default App;
+export default App
